@@ -12,7 +12,7 @@
             <repositories>
                 <repository>
                     <id>github</id>
-                    <name>GitHub yvladimirov Apache Maven Packages<</name>
+                    <name>GitHub yvladimirov Apache Maven Packages</name>
                     <url>https://maven.pkg.github.com/yvladimirov</url>
                 </repository>
             </repositories>
