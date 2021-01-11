@@ -3,12 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.yvladimirov.maven</groupId>
-    <artifactId>embeded-pg-maven-plugin</artifactId>
-    <version>0.0.2</version>
+    <groupId>github.yvladimirov</groupId>
+    <artifactId>embedded-pg-maven-plugin</artifactId>
+    <version>0.0.3</version>
     <packaging>maven-plugin</packaging>
 
     <properties>
+        <github.global.server>github</github.global.server>
         <maven.version>3.5.3</maven.version>
         <maven.project.version>2.2.1</maven.project.version>
         <maven.annotations.version>3.5.1</maven.annotations.version>
