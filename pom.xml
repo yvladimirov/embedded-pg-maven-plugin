@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>github.yvladimirov</groupId>
     <artifactId>embedded-pg-maven-plugin</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <packaging>maven-plugin</packaging>
 
     <properties>
@@ -13,7 +13,7 @@
         <maven.version>3.5.3</maven.version>
         <maven.project.version>2.2.1</maven.project.version>
         <maven.annotations.version>3.5.1</maven.annotations.version>
-        <postgresql.embeded.version>0.11.4</postgresql.embeded.version>
+        <postgresql.embeded.version>0.13.3</postgresql.embeded.version>
     </properties>
     <dependencies>
         <dependency>

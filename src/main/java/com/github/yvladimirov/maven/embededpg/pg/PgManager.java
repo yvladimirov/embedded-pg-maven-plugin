@@ -1,6 +1,7 @@
 package com.github.yvladimirov.maven.embededpg.pg;
 
 import com.opentable.db.postgres.embedded.EmbeddedPostgres;
+import org.apache.maven.plugin.logging.Log;
 import org.apache.maven.project.MavenProject;
 
 import java.io.IOException;
@@ -40,17 +41,19 @@ public class PgManager {
     public void createDB(String dbName) {
         try (Connection connection = process.getPostgresDatabase().getConnection();
              Statement statement = connection.createStatement()) {
-            connection.createStatement().execute("CREATE DATABASE " + dbName);
+            statement.execute("CREATE DATABASE " + dbName);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void populateProperty(MavenProject project, String dbName) {
+    public void populateProperty(MavenProject project, String dbName, Log log) {
         Properties prop = project.getProperties();
-        prop.setProperty("embededpg.jdbcurl", process.getJdbcUrl("postgres", dbName));
-        prop.setProperty("embededpg.port", "" + process.getPort());
-        prop.setProperty("embededpg.user", "postgres");
-
+        prop.setProperty("embedded-pg.jdbc.url", process.getJdbcUrl("postgres", dbName));
+        log.info("Add ${embedded-pg.jdbc.url}=" + process.getJdbcUrl("postgres", dbName));
+        prop.setProperty("embedded-pg.port", "" + process.getPort());
+        log.info("Add ${embedded-pg.port}=" + process.getPort());
+        prop.setProperty("embedded-pg.user", "postgres");
+        log.info("Add ${embedded-pg.user}=postgres");
     }
 }

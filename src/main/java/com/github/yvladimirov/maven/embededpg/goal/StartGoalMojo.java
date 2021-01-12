@@ -30,6 +30,6 @@ public class StartGoalMojo extends AbstractMojo {
         getLog().info("Create DB: " + dbName);
         PgManager.getInstance().createDB(dbName);
         getLog().info("Populate system property");
-        PgManager.getInstance().populateProperty(project, dbName);
+        PgManager.getInstance().populateProperty(project, dbName,getLog());
     }
 }
